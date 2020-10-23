@@ -40,7 +40,7 @@
             // lbl_minutes
             // 
             this.lbl_minutes.AutoSize = true;
-            this.lbl_minutes.Location = new System.Drawing.Point(102, 55);
+            this.lbl_minutes.Location = new System.Drawing.Point(163, 55);
             this.lbl_minutes.Name = "lbl_minutes";
             this.lbl_minutes.Size = new System.Drawing.Size(44, 13);
             this.lbl_minutes.TabIndex = 0;
@@ -49,7 +49,7 @@
             // cb_minutes
             // 
             this.cb_minutes.FormattingEnabled = true;
-            this.cb_minutes.Location = new System.Drawing.Point(64, 71);
+            this.cb_minutes.Location = new System.Drawing.Point(121, 71);
             this.cb_minutes.Name = "cb_minutes";
             this.cb_minutes.Size = new System.Drawing.Size(121, 21);
             this.cb_minutes.TabIndex = 1;
@@ -66,7 +66,7 @@
             // 
             // btn_stop
             // 
-            this.btn_stop.Location = new System.Drawing.Point(121, 251);
+            this.btn_stop.Location = new System.Drawing.Point(254, 251);
             this.btn_stop.Name = "btn_stop";
             this.btn_stop.Size = new System.Drawing.Size(105, 23);
             this.btn_stop.TabIndex = 3;
@@ -78,7 +78,7 @@
             // 
             this.lbl_timer.AutoSize = true;
             this.lbl_timer.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_timer.Location = new System.Drawing.Point(22, 115);
+            this.lbl_timer.Location = new System.Drawing.Point(89, 115);
             this.lbl_timer.Name = "lbl_timer";
             this.lbl_timer.Size = new System.Drawing.Size(194, 73);
             this.lbl_timer.TabIndex = 4;
@@ -93,14 +93,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(254, 300);
+            this.ClientSize = new System.Drawing.Size(371, 300);
             this.Controls.Add(this.lbl_timer);
             this.Controls.Add(this.btn_stop);
             this.Controls.Add(this.btn_start);
             this.Controls.Add(this.cb_minutes);
             this.Controls.Add(this.lbl_minutes);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "ShutdownTimer";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

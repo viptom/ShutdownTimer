@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShutdownTimer
@@ -22,28 +15,28 @@ namespace ShutdownTimer
         {
             for (int i = 30; i <= 180; i += 30)
             {
-                this.cb_minutes.Items.Add(i.ToString());
+                cb_minutes.Items.Add(i.ToString());
             }
-            this.cb_minutes.SelectedItem = "30";
-            this.btn_stop.Enabled = false;
+            cb_minutes.SelectedItem = "30";
+            btn_stop.Enabled = false;
         }
 
         private void btn_start_Click(object sender, EventArgs e)
         {
-            this.btn_start.Enabled = false;
-            this.btn_stop.Enabled = true;
+            btn_start.Enabled = false;
+            btn_stop.Enabled = true;
 
-            totalSeconds = int.Parse(this.cb_minutes.SelectedItem.ToString()) * 60;
+            totalSeconds = int.Parse(cb_minutes.SelectedItem.ToString()) * 60;
 
             System.Diagnostics.Process.Start("shutdown", "/s /t " + totalSeconds);
 
-            this.t_timer.Enabled = true;
+            t_timer.Enabled = true;
         }
 
         private void btn_stop_Click(object sender, EventArgs e)
         {
-            this.btn_stop.Enabled = false;
-            this.btn_start.Enabled = true;
+            btn_stop.Enabled = false;
+            btn_start.Enabled = true;
 
             System.Diagnostics.Process.Start("shutdown", "/a");
         }
@@ -55,12 +48,17 @@ namespace ShutdownTimer
                 totalSeconds--;
                 int minutes = totalSeconds / 60;
                 int seconds = totalSeconds - (minutes * 60);
-                this.lbl_timer.Text = minutes.ToString() + ":" + seconds.ToString();
+                string zero = seconds < 10 ? "0" : string.Empty;
+                lbl_timer.Text = minutes.ToString() + ":" + zero + seconds.ToString();
+
+                if (totalSeconds == 300)
+                {
+                    MessageBox.Show("Less than 5 minutes left");
+                }
             }
             else
             {
-                this.t_timer.Stop();
-                MessageBox.Show("Time's up!");
+                t_timer.Stop();
             }
         }
     }
